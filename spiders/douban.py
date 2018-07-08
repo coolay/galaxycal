@@ -59,8 +59,12 @@ def get_one_page_data(content):
                 }
 
 def write_to_json(data):
+
+     if (float(data.get("score"))>9):
+           print(data.get("title"))
      with open('./doubantop250.txt','a',encoding="utf-8") as file:
          file.write(json.dumps(data,ensure_ascii=False,indent=2))
+
 
 
 def get_topN_data(page):
